@@ -1,19 +1,26 @@
 package kmitl.esd.exercise1.composite;
 
-public class Department implements Employable {
-    private String name;
-    private Manager manager;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
 
-    public Department(String name, Manager manager) {
+public class Department implements BusinessUnit {
+    private static Logger logger = Logger.getLogger(Department.class.getName());
+    private String name;
+    private List<BusinessUnit> teams = new ArrayList<>();
+
+    public Department(String name) {
         this.name = name;
-        this.manager = manager;
+    }
+
+    public void addTeam(BusinessUnit team) {
+        teams.add(team);
     }
 
     @Override
-    public void displayEmployeeInformation() {
-        System.out.println("Department: ".concat(name));
-        System.out.println("Manager:");
+    public void displayUnitDescription() {
+        logger.info("Department name: " + name + " With Teams: ");
 
-        manager.displayEmployeeInformation();
+        teams.forEach(team -> team.displayUnitDescription());
     }
 }

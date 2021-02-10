@@ -1,0 +1,1 @@
+The singleton allows control of only one instance of a class.
