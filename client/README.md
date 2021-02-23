@@ -1,0 +1,1 @@
+The client is used to test the server's customer CRUD APIs.
