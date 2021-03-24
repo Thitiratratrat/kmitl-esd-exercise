@@ -6,22 +6,22 @@ The customer service module contains 4 packages inside:
 3. Repository
 4. Service
 
-##Controller
+## Controller
 The controller package contains the REST controllers for the customer and
  quotation model. The controllers support CRUD operations. This package sits
   in the controller layer and provides REST API for the clients to request.
   
-##Model
+## Model
 The model package sits in the entity layer. The model contains two entities
 : customer and quotation. The model layer defines the structure of the
  database such as the tables, columns, and the column specifications (max
  , min characters). The model uses JPA.
-####Customer
+#### Customer
 The customer entity contains the customer's information which includes the
  customer's id, name, birthday, phonenumber, creationDateTime, email
  , tempRemark, and age.
  
-####Quotation
+#### Quotation
 The quotation entity contains the customer's quotations information. A
  quotation must belong to a customer. The quotation contains id, reference, a
   reference to the customer who quotes, price, creation date time, valid
